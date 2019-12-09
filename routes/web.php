@@ -11,39 +11,18 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('index');
-
-Route::get('/produtos/criar', 'ProdutoController@create')->name('produtos.criar');
-Route::post('/produtos/criar', 'ProdutoController@store')->name('produtos.cadastro');
-
-Route::get('/produto/{id}', 'ProdutoController@index')->name('produto');
-//show 
-Route::get('/produtos/show','ProdutoController@show')->name('produtos.show');
-//delete 
-Route::delete('/produtos/delete/{id}','ProdutoController@delete')->name('produtos.delete');
-//update
-Route::get('/produtos/update/{id}','ProdutoController@edit')->name('produtos.edit');
-Route::put('/produtos/update/{id}','ProdutoController@update');
-
-
-
-
-
-
-
 Auth::routes();
 
-
-
-
-Route::view('/usuario', 'usuario/show');
-Route::view('/produto', 'home/produto');
-
-
-
-// Route::get('/produto/{id}', 'HomeController@produto')->name('produto');
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('/produto/{id}', 'HomeController@produto')->name('produto');
 Route::get('/carrinho', 'CarrinhoController@index')->name('carrinho.index');
-
+Route::get('/carrinho/adicionar', function() { return redirect()->route('index');});
+Route::post('/carrinho/adicionar', 'CarrinhoController@adicionar')->name('carrinho.adicionar');
+Route::delete('/carrinho/remover', 'CarrinhoController@remover')->name('carrinho.remover');
+Route::post('/carrinho/concluir', 'CarrinhoController@concluir')->name('carrinho.concluir');
+Route::get('/carrinho/compras', 'CarrinhoController@compras')->name('carrinho.compras');
+Route::post('/carrinho/cancelar', 'CarrinhoController@cancelar')->name('carrinho.cancelar');
+Route::post('/carrinho/desconto', 'CarrinhoController@desconto')->name('carrinho.desconto');
 
 // rotas do admin
 Route::group(['prefix' => 'admin'], function () {
@@ -62,3 +41,34 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('cupons/deletar/{id}', 'Admin\CupomDescontoController@deletar')->name('admin.cupons.deletar');
 
 });
+
+Route::get('/produtos/show','ProdutoController@show')->name('produtos.show');
+Route::delete('/produtos/delete/{id}','ProdutoController@delete')->name('produtos.delete');
+Route::get('/produtos/update/{id}','ProdutoController@edit')->name('produtos.edit');
+Route::put('/produtos/update/{id}','ProdutoController@update');
+Route::get('/produtos/criar', 'ProdutoController@create')->name('produtos.criar');
+Route::post('/produtos/criar', 'ProdutoController@store')->name('produtos.cadastro');
+Route::get('/indisponivel', function(){ return view ('errors.503');})->name('indisponivel');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

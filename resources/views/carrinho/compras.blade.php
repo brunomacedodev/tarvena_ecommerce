@@ -1,7 +1,7 @@
-@extends('layout')
+@extends('layouts.app')
 @section('pagina_titulo', 'COMPRAS' )
 
-@section('pagina_conteudo')
+@section('content')
 
 <div class="container">
     <div class="row">

@@ -19,8 +19,8 @@ class CreateProdutosTable extends Migration
             $table->string('codigo', 10);
             $table->string('fabricante', 50);
             $table->decimal('valor', 6, 2)->default(0);
-            $table->string('descricao', 100);
-            $table->string('detalhes', 100);
+            $table->string('descricao', 1000);
+            $table->string('detalhes', 1000);
             $table->string('imagem', 100)->nullable();
             $table->enum('ativo', ['S', 'N'])->default('S');
             $table->timestamps();

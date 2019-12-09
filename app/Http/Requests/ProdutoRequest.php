@@ -28,8 +28,8 @@ class ProdutoRequest extends FormRequest
             'codigo' => 'required|numeric',
             'fabricante' => 'required|max:50',
             'valor' => 'required|numeric',
-            'descricao' => 'required|max:500',
-            'detalhes' => 'required|max:500',
+            'descricao' => 'required|min:10',
+            'detalhes' => 'required|min:10',
             'categoria' => 'required|max:100',
             'imagem' => 'nullable|sometimes|image|mimes:jpg,jpeg,png,gif',
             'ativo' => 'required'

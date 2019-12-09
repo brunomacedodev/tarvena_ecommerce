@@ -51,37 +51,40 @@
 
         <div class="row m-0 px-0 py-2" style="width: 100%">
 		
-            <?php foreach ($produtos as $produto) { ?>
+            <?php foreach ($registros as $registro) { ?>
                 <div class="col-lg-3 col-sm-6 m-0 p-3">
-				<img src="{{ $produto->imagem }}" class="card-img-top" alt="{{ $produto->nome }}">
-                    <div class="row justify-content-center mt-2 px-2">
-                        <h5 class=" text-white">{{ $produto->imagem }}</h5>
-                    </div>
-                    <div class="row p-0 mt-2 ">
-                        <ul class="d-flex flex-row justify-content-center text-white col">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star-half-alt"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                            <li><img src="{{ asset('img\taverna_logo.svg') }}" class="ml-2" style="height: 20px" alt="">
-                            <small class="text-white">taverna indica</small></li>
-                        </ul>
-                    </div>
-                    <div class="row p-0 mt-2 justify-content-around">
-                        <p class="text-white"><strong>Ofertas a partir de</strong></p>
-                    </div>
-                    <div class="row justify-content-center">
-                        <h2 class="text-white text-center">R$ {{ $produto->valor }}</h2>
-                    </div>
-                    <div class="row justify-content-center mt-2">
-                        <a href="/produto/{{ $produto->id }}" class="btn btnPadrao" title="Confira Já!">Confira Já! <i class="fas fa-thumbs-up"></i></a>
-                    </div>
+                <a href="/produto/{{ $registro->id }}">
+                    <img src="{{ $registro->imagem }}" class="card-img-top" alt="{{ $registro->nome }}" title="{{ $registro->nome }}">
+                </a>
+                
+                <div class="row justify-content-center mt-2 px-2">
+                    <h5 class=" text-white">{{ $registro->nome }}</h5>
                 </div>
-			<?php } ?>
-			
-			
-            
-    </section>
-    
+                <div class="row p-0 mt-2 ">
+                    <ul class="d-flex flex-row justify-content-center text-white col">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star-half-alt"></i></li>
+                        <li><i class="far fa-star"></i></li>
+                        <li><img src="{{ asset('img\taverna_logo.svg') }}" class="ml-2" style="height: 20px" alt="">
+                        <small class="text-white">taverna indica</small></li>
+                    </ul>
+                </div>
+                <div class="row p-0 mt-2 justify-content-around">
+                    <p class="text-white"><strong>Ofertas a partir de</strong></p>
+                </div>
+                <div class="row justify-content-center">
+                    <h2 class="text-white text-center">R$ {{ number_format($registro->valor, 2, ',', '.') }}</h2>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <a href="/produto/{{ $registro->id }}" class="btn btnPadrao" title="Confira Já!">Confira Já! <i class="fas fa-thumbs-up"></i></a>
+                </div>
+            </div>
+        <?php } ?>
+        
+        
+        
+</section>
+
 @endsection

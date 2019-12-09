@@ -17,8 +17,4 @@ class Produto extends Model
         'imagem',
         'ativo'
     ];
-
-    public function getAvatarImageAttribute($value) {
-        return $this->imagem == null ? asset('img/null.jpg') : asset($this->img_path);
-    }
 }

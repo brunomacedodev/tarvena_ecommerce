@@ -12,6 +12,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.mask.js') }}" defer></script>
+    <script src="{{ asset('js/zoomsl.js') }}" defer></script>
+    <script src="{{ asset('js/carrinho.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -59,7 +61,7 @@
                                     </div>
                                     @else
                                         <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                                            <a class="btn btnPadrao border-0 text-white efeitoLink" href="{{ url('/auth/register')}}">{{ __('.minha conta') }}</a>
+                                            <a class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('carrinho.compras') }}">{{ __('.minha conta') }}</a>
                                             <a onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();" class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('logout') }}">{{ __('.sair') }}</a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -68,8 +70,8 @@
                                         </div>
                                 </div>
                                 @endguest
-                            <a class="btn btnPadrao border-0" href="{{ route('login') }}" title="Acessar lista"><i class="fas fa-heart p-0 btnUserWishCartSearchDrop"></i></a>
-                            <a class="btn btnPadrao border-0" href="{{ route('login') }}" title="Acessar carrinho"><i class="fas fa-shopping-cart p-0 btnUserWishCartSearchDrop"></i></a>
+                            <a class="btn btnPadrao border-0" href="{{ route('indisponivel') }}" title="Acessar lista"><i class="fas fa-heart p-0 btnUserWishCartSearchDrop"></i></a>
+                            <a class="btn btnPadrao border-0" href="{{ route('carrinho.index') }}" title="Acessar carrinho"><i class="fas fa-shopping-cart p-0 btnUserWishCartSearchDrop"></i></a>
                         </div>
                     </nav>  
         
@@ -139,5 +141,7 @@
             </div>
         </footer>
     </div>
+    @stack('scripts')
 </body>
 </html>
+        
