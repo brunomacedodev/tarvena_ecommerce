@@ -119,6 +119,28 @@ class ProdutoController extends Controller
 
         return view('produtos.index')->with(['produtos' => $produtos, 'search' => $search]);
     }
+    public function action(){
+
+        $produtos = Produto::all();
+        return view ('/produtos/colecionaveis')->with('produtos',$produtos);
+    }
+    public function info(){
+
+        $produtos = Produto::all();
+        return view ('/produtos/informatica')->with('produtos',$produtos);
+    }
+    public function moda(){
+        $produtos = Produto::all();
+        return view('/produtos/moda')->with('produtos', $produtos);
+    }
+    public function livro(){
+        $produtos = Produto::all();
+        return view('/produtos/livros')->with('produtos', $produtos);
+    }
+    public function games(){
+        $produtos = Produto::all();
+        return view('/produtos/games')->with('produtos', $produtos);
+    }
 }
 
         

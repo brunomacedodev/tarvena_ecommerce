@@ -50,8 +50,16 @@ Route::get('/produtos/criar', 'ProdutoController@create')->name('produtos.criar'
 Route::post('/produtos/criar', 'ProdutoController@store')->name('produtos.cadastro');
 Route::get('/indisponivel', function(){ return view ('errors.503');})->name('indisponivel');
 
-
-
+// show colecionaveis
+Route::get('/produtos/colecionaveis', 'ProdutoController@action');
+// show informatica
+Route::get('/produtos/informatica', 'ProdutoController@info');
+//show moda 
+Route::get('/produtos/moda', 'ProdutoController@moda');
+//show livros 
+Route::get('/produtos/livros', 'ProdutoController@livro');
+//show games
+Route::get('/produtos/games', 'ProdutoController@games');
 
 
 
