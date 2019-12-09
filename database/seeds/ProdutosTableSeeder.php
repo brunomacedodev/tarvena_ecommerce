@@ -19,7 +19,7 @@ class ProdutosTableSeeder extends Seeder
             'categoria' => 'games',
             'valor' => '199',
             'descricao' => 'FIFA 20 inova no jogo inteiro.',
-            'detalhes' => 'Dimensões do produto: 1,5 x 13,5 x 17 cm ; 4,54 g',
+            'detalhes' => 'Dimensões do produto',
             'ativo' => 'S',
             'imagem' => 'img/seed_games.jpg'
         ]);
