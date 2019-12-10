@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'gender' => ['required', 'string', 'min:8'],
             'cep' => ['required', 'string']
         ]);
+        
     }
 
     /**

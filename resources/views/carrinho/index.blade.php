@@ -1,26 +1,18 @@
-﻿@extends('layouts.app')
+﻿
+@extends('layouts.app')
 @section('pagina_produto', 'Carrinho')
 
 @section('content')
 <div class="container text-white">
-    <div class="row">
-        <h3>Produtos no carrinho</h3> 
-    </div>
-
-@if (Session::has('mensagem-sucesso'))
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-6 alert alert-success text-center">
-            <h4>{{ Session::get('mensagem-sucesso') }}</h4>
-        </div>
+    <div class="row ">
+        <h3 class="col-md-6">Minhas compras: </h3>
+        @if(Session::has('mensagem-sucesso'))
+            <strong class="bg-success p-4 col-md-6 col text-center">{{ Session::get('mensagem-sucesso') }}</strong>
         @endif
-        @if (Session::has('mensagem-falha'))
-        <div class="col-3 alert alert-warning text-center">
-            <h4>{{ Session::get('mensagem-falha') }}</h4>
-        </div>
+        @if(Session::has('mensagem-falha'))
+            <strong class="bg-danger p-4 col-md-6 col text-center">{{ Session::get('mensagem-falha') }}</strong>
+        @endif
     </div>
-</div>
-@endif  
  
 @forelse ($pedidos as $pedido)
 <div class="container">
@@ -58,7 +50,7 @@
                         <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 1 )" title="Remover item do pedido"><i class="fas fa-minus-circle"></i></a>
                         <span>{{ $pedido_produto->qtd }}</span>
                         <a href="#" onclick="carrinhoAdicionarProduto({{ $pedido_produto->produto_id }})" title="Adicionar item ao pedido"><i class="fas fa-plus-circle"></i></a>
-                        <span title="Remover produto do pedido">Adicionar/Retirar</span>
+                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 0)" title="Remover produto do pedido">Adicionar/Retirar</a>
                     </div>
                 </td>
                 <td>{{ $pedido_produto->produto->nome }}</td>
