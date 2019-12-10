@@ -141,6 +141,10 @@ class ProdutoController extends Controller
         $produtos = Produto::all();
         return view('/produtos/games')->with('produtos', $produtos);
     }
+    public function musica(){
+        $produtos = Produto::all();
+        return view('/produtos/musica')->with('produtos', $produtos);
+    }
 }
 
         

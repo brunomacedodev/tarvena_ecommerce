@@ -51,15 +51,18 @@ Route::post('/produtos/criar', 'ProdutoController@store')->name('produtos.cadast
 Route::get('/indisponivel', function(){ return view ('errors.503');})->name('indisponivel');
 
 // show colecionaveis
-Route::get('/produtos/colecionaveis', 'ProdutoController@action');
+Route::get('/produtos/colecionaveis', 'ProdutoController@action')->name('colecionaveis');
 // show informatica
-Route::get('/produtos/informatica', 'ProdutoController@info');
+Route::get('/produtos/informatica', 'ProdutoController@info')->name('informatica');
 //show moda 
-Route::get('/produtos/moda', 'ProdutoController@moda');
+Route::get('/produtos/moda', 'ProdutoController@moda')->name('moda');
 //show livros 
-Route::get('/produtos/livros', 'ProdutoController@livro');
+Route::get('/produtos/livros', 'ProdutoController@livro')->name('livros');
 //show games
-Route::get('/produtos/games', 'ProdutoController@games');
+Route::get('/produtos/games', 'ProdutoController@games')->name('games');
+//show musica 
+Route::get('/produtos/musica', 'ProdutoController@musica')->name('musica');
+
 
 
 

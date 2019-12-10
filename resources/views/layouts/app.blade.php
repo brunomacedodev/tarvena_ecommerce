@@ -78,22 +78,22 @@
                 </div>
                 <div class="collapse nav container-fluid justify-content-center" id="navbarNav">
                     <ul class="d-flex flex-md-row flex-column p-0" >
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.games</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.colecionaveis</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href=#>.moda</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href=#>.informatica</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href=#>.livros</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.música</a></button></li>                     </ul>
+                    <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('games')}}">.games</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('colecionaveis')}}">.colecionaveis</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('moda')}}">.moda</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('informatica')}}">.informatica</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('livros')}}">.livros</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('musica')}}">.música</a></button></li>                     </ul>
                 </div>
 
                 <div class="collapse nav container" id="navbarNavDropdown">
                         <ul class="d-flex flex-column p-0" >
-                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.games</a></button></li>
-                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.colecionaveis</a></button></li>
-                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.moda</a></button></li>
-                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.informatica</a></button></li>
-                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.livros</a></button></li>
-                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.música</a></button></li>        
+                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('games')}}">.games</a></button></li>
+                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('colecionaveis')}}">.colecionaveis</a></button></li>
+                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('moda')}}">.moda</a></button></li>
+                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('informatica')}}">.informatica</a></button></li>
+                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('livros')}}">.livros</a></button></li>
+                            <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('musica')}}">.música</a></button></li>        
                         </ul>
                     </div>
             </div>
