@@ -1,5 +1,6 @@
 
 @extends('layouts.app')
+@section('pagina_titulo', 'Ops...')
 @section('pagina_produto','Indisponível')
 
 @section('content')
