@@ -61,6 +61,11 @@
                                     </div>
                                     @else
                                         <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                                                @if (Auth::user()->name == "Admin")
+                                                <a class="btn btnPadrao border-0 text-white efeitoLink" href="/produtos/criar">>{{ __('.criar produto') }}</a>
+                         
+                                                    
+                                                @endif
                                             <a class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('carrinho.compras') }}">{{ __('.minhas compras') }}</a>
                                             <a onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();" class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('logout') }}">{{ __('.sair') }}</a>
@@ -68,6 +73,7 @@
                                                 @csrf
                                             </form>
                                         </div>
+                                        
                                 </div>
                                 @endguest
                             <a class="btn btnPadrao border-0" href="{{ route('indisponivel') }}" title="Acessar lista"><i class="fas fa-heart p-0 btnUserWishCartSearchDrop"></i></a>
@@ -96,6 +102,7 @@
                             <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('musica')}}">.música</a></button></li>        
                         </ul>
                     </div>
+                    
             </div>
         </header>
 
