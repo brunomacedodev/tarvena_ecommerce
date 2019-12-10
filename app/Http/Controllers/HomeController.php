@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $registros = Produto::where([
+        $registros = Produto::take(8)->inRandomOrder()->where([
             'ativo' => 'S'
             ])->get();
 
