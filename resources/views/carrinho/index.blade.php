@@ -20,7 +20,8 @@
         </div>
     </div>
 </div>
-@endif   
+@endif  
+ 
 @forelse ($pedidos as $pedido)
 <div class="container">
     <div class="row p-2 justify-content-end border-bottom">
@@ -54,10 +55,10 @@
                 </td>
                 <td>
                     <div>
-                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 1 )"><i class="fas fa-minus-circle"></i></a>
+                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 1 )" title="Remover item do pedido"><i class="fas fa-minus-circle"></i></a>
                         <span>{{ $pedido_produto->qtd }}</span>
-                        <a href="#" onclick="carrinhoAdicionarProduto({{ $pedido_produto->produto_id }})"><i class="fas fa-plus-circle"></i></a>
-                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 0)" >Adicionar/Retirar</a>
+                        <a href="#" onclick="carrinhoAdicionarProduto({{ $pedido_produto->produto_id }})" title="Adicionar item ao pedido"><i class="fas fa-plus-circle"></i></a>
+                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 0)" title="Remover produto do pedido">Adicionar/Retirar</a>
                     </div>
                 </td>
                 <td>{{ $pedido_produto->produto->nome }}</td>
@@ -94,7 +95,7 @@
         <a class="btn btn-lg btnPadrao mr-3" href="{{ route('index') }}">Continuar comprando</a>
         <form method="POST" action="{{ route('carrinho.concluir') }}">
             {{ csrf_field() }}
-            <input type="hidden" name="pedido_id" value="">
+            <input type="hidden" name="pedido_id" value="{{ $pedido->id }}">
             <button type="submit" class="btn btn-lg btnPadrao">
                 Concluir compra
             </button>   

@@ -61,7 +61,7 @@
                                     </div>
                                     @else
                                         <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                                            <a class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('carrinho.compras') }}">{{ __('.minha conta') }}</a>
+                                            <a class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('carrinho.compras') }}">{{ __('.minhas compras') }}</a>
                                             <a onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();" class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('logout') }}">{{ __('.sair') }}</a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
