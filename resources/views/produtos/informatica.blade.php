@@ -170,7 +170,7 @@
                             <h2 class="text-white text-center">R$ {{ $produto->valor }}</h2>
                         </div>
                         <div class="row justify-content-center mt-2">
-                            <button class="btn btnPadrao" title="Confira Já!"> <a href="/pagina-produto/{{ $produto->id }}"> Compre Já! </a> <i class="fas fa-thumbs-up"></i></button>
+                            <button class="btn btnPadrao" title="Confira Já!"> <a href="/produto/{{ $produto->id }}"> Compre Já! </a> <i class="fas fa-thumbs-up"></i></button>
                         </div>
                     </div>
                 @endif
