@@ -62,6 +62,12 @@ Route::get('/produtos/livros', 'ProdutoController@livro')->name('livros');
 Route::get('/produtos/games', 'ProdutoController@games')->name('games');
 //show musica 
 Route::get('/produtos/musica', 'ProdutoController@musica')->name('musica');
+//show sobre nos 
+Route::get('/sobrenos', function(){ return view ('outros.sobrenos');})->name('sobrenos');
+//show duvidas 
+Route::get('/faq', function(){ return view ('outros.faq');})->name('faq');
+//show central de atendimento 
+Route::get('/contato', function(){ return view ('outros.contato');})->name('contato');
 
 
 

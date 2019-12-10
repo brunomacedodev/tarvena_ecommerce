@@ -109,16 +109,15 @@
             <div class="container-fluid justify-content-center mt-2 ">
                 <div class="row">        
                     <ul class="col nav flex-row justify-content-center p-0">
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.sobre nós</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="#">.dúvidas</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="">.central de atendimento</a></button></li>
-                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="">.venda com a gente</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('sobrenos')}}">.sobre nós</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('faq')}}">.dúvidas</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('contato')}}">.central de atendimento</a></button></li>
+                        <li class="nav-item mx-4"><button class="btn btnPadrao border-0 text-white efeitoLink"><a href="{{ route('indisponivel')}}">.venda com a gente</a></button></li>
                     </ul>
                 </div>
                 <div class="row p-2 justify-content-center">
                     <div class="col-md-3 col">
-                        <img src="{{ asset('img/taverna_logo_nav.png') }}" class="img-fluid p-2" title="Taverna.com">
-        
+                        <a class="img-fluid p-2" href="{{ route('index') }}" title="Taverna.com"><img src="{{ asset('img/taverna_logo_nav.png') }}" alt=""></a>    
                     </div>
         
                     <div class="col">
