@@ -58,7 +58,7 @@
                         <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 1 )" title="Remover item do pedido"><i class="fas fa-minus-circle"></i></a>
                         <span>{{ $pedido_produto->qtd }}</span>
                         <a href="#" onclick="carrinhoAdicionarProduto({{ $pedido_produto->produto_id }})" title="Adicionar item ao pedido"><i class="fas fa-plus-circle"></i></a>
-                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 0)" title="Remover produto do pedido">Adicionar/Retirar</a>
+                        <span title="Remover produto do pedido">Adicionar/Retirar</span>
                     </div>
                 </td>
                 <td>{{ $pedido_produto->produto->nome }}</td>

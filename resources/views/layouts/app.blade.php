@@ -63,7 +63,7 @@
                                         <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
                                                 @if (Auth::user()->name == "Admin")
                                                 <a class="btn btnPadrao border-0 text-white efeitoLink" href="/produtos/criar">>{{ __('.criar produto') }}</a>
-                         
+                                                <a class="btn btnPadrao border-0 text-white efeitoLink" href="/produtos/show">>{{ __('.listar produtos') }}</a>
                                                     
                                                 @endif
                                             <a class="btn btnPadrao border-0 text-white efeitoLink" href="{{ route('carrinho.compras') }}">{{ __('.minhas compras') }}</a>

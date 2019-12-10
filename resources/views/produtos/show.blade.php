@@ -78,7 +78,7 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <p>Contato: {{ $produto->nome . " " . $produto->categoria }}</p>
+                                                                    <p>Produto: {{ $produto->nome . " " . $produto->categoria }}</p>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
