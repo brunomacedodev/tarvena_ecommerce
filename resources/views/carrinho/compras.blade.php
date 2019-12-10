@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('pagina_titulo', 'COMPRAS' )
+@section('pagina_titulo', 'Compras' )
 
 @section('content')
 
 <div class="container">
     <div class="row">
-        <h3>Minhas compras</h3>
+        <h3 class="col text-white">Minhas compras</h3>
         @if (Session::has('mensagem-sucesso'))
             <div class="card-panel green">{{ Session::get('mensagem-sucesso') }}</div>
         @endif
@@ -14,7 +14,7 @@
         @endif
         <div class="divider"></div>
         <div class="row col s12 m12 l12">
-            <h4>Compras concluídas</h4>
+            <h4 class="text-white">Compras concluídas</h4>
             @forelse ($compras as $pedido)
                 <h5 class="col l6 s12 m6"> Pedido: {{ $pedido->id }} </h5>
                 <h5 class="col l6 s12 m6"> Criado em: {{ $pedido->created_at->format('d/m/Y H:i') }} </h5>
@@ -79,7 +79,7 @@
                     </table>
                 </form>
             @empty
-                <h5 class="center">
+                <h5 class="center text-white">
                     @if ($cancelados->count() > 0)
                         Neste momento não há nenhuma compra valida.
                     @else
@@ -90,7 +90,7 @@
         </div>
         <div class="row col s12 m12 l12">
             <div class="divider"></div>
-            <h4>Compras canceladas</h4>
+            <h4 class="text-white">Compras canceladas</h4>
             @forelse ($cancelados as $pedido)
                 <h5 class="col l2 s12 m2"> Pedido: {{ $pedido->id }} </h5>
                 <h5 class="col l5 s12 m5"> Criado em: {{ $pedido->created_at->format('d/m/Y H:i') }} </h5>
@@ -135,7 +135,7 @@
                     </tfoot>
                 </table>
             @empty
-                <h5 class="center">Nenhuma compra ainda foi cancelada.</h5>
+                <h5 class="center text-white">Nenhuma compra ainda foi cancelada.</h5>
             @endforelse
         </div>
     </div>

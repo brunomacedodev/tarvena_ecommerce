@@ -8,18 +8,21 @@
     </div>
 
 @if (Session::has('mensagem-sucesso'))
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-3 alert alert-success text-center">
+        <div class="col-6 alert alert-success text-center">
             <h4>{{ Session::get('mensagem-sucesso') }}</h4>
         </div>
-@endif
-@if (Session::has('mensagem-falha'))
-<div class="col-3 alert alert-warning text-center">
-    <h4>{{ Session::get('mensagem-falha') }}</h4>
-</div>
+        @endif
+        @if (Session::has('mensagem-falha'))
+        <div class="col-3 alert alert-warning text-center">
+            <h4>{{ Session::get('mensagem-falha') }}</h4>
+        </div>
+    </div>
 </div>
 @endif   
 @forelse ($pedidos as $pedido)
+<div class="container">
     <div class="row p-2 justify-content-end border-bottom">
         <div class="col-md-3">
             <h5>Pedido: {{ $pedido->id }}</h5>
@@ -28,12 +31,12 @@
             <h5>Criado em: {{ $pedido->created_at->format('d/m/Y H:i') }}</h5>
         </div>
     </div>
-
+</div>
     <table class="table table-hover table-dark mt-4">
         <thead class="text-center">
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Qtd</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Quantidade</th>
                 <th scope="col">Produto</th>
                 <th scope="col">Valor Unit.</th>
                 <th scope="col">Desconto(s)</th>
@@ -43,18 +46,18 @@
         <tbody>
         @php
             $total_pedido = 0;
-        @endphp`
+        @endphp
         @foreach ($pedido->pedido_produtos as $pedido_produto)
             <tr class="text-center">
                 <td>
-                    <img width="100" height="100" src="{{ asset('img/img_marcacao.jpg') }}" alt="" class="rounded-circle">
+                    <img width="100" height="100" src="{{ asset($pedido_produto->produto->imagem) }}" alt="" class="rounded-circle">
                 </td>
                 <td>
-                    <div >
+                    <div>
                         <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 1 )"><i class="fas fa-minus-circle"></i></a>
                         <span>{{ $pedido_produto->qtd }}</span>
                         <a href="#" onclick="carrinhoAdicionarProduto({{ $pedido_produto->produto_id }})"><i class="fas fa-plus-circle"></i></a>
-                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 0)" >Retirar produto</a>
+                        <a href="#" onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 0)" >Adicionar/Retirar</a>
                     </div>
                 </td>
                 <td>{{ $pedido_produto->produto->nome }}</td>
@@ -69,10 +72,13 @@
             @endforeach
         </tbody>
     </table>
+    <div class="container">
     <div class="row justify-content-md-end border-bottom">
         <strong class="mr-2">Total do pedido:</strong>
         <span class="">R$ {{ number_format($total_pedido, 2, ',', '.') }}</span>
     </div>
+    </div>
+    <div class="container">
     <div class="row justify-content-md-end mt-2">
         <form method="POST" action="{{ route('carrinho.desconto') }}">
             {{ csrf_field() }}
@@ -82,6 +88,8 @@
             <button class="btn btnPadrao">Validar</button>
         </form>
     </div>
+    </div>
+    <div class="container">
     <div class="row justify-content-md-end mt-2">
         <a class="btn btn-lg btnPadrao mr-3" href="{{ route('index') }}">Continuar comprando</a>
         <form method="POST" action="{{ route('carrinho.concluir') }}">
@@ -91,6 +99,7 @@
                 Concluir compra
             </button>   
         </form>
+    </div>
     </div>
     @empty
         <h5 class="text-white">Não há nenhum pedido no carrinho</h5>
