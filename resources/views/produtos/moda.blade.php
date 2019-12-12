@@ -48,7 +48,7 @@
             
                 <div class="col-lg-3 col-sm-6 m-0 p-3">
                     <a href="/produto/{{ $produto->id }}">
-                    <img src="{{ asset($produto->imagem)}}"  class=" card-img-top img-games" alt="{{ $produto->nome}}" width="500" heigth="500">
+                    <img src="{{ asset($produto->imagem)}}"  class=" card-img-top" alt="{{ $produto->nome}}" width="500" heigth="500">
                     </a>
                     <div class="row justify-content-center mt-2 px-2">
                         <h5 class=" text-white">{{ $produto->nome}}</h5>

@@ -26,7 +26,7 @@ Route::post('/carrinho/cancelar', 'CarrinhoController@cancelar')->name('carrinho
 Route::post('/carrinho/desconto', 'CarrinhoController@desconto')->name('carrinho.desconto');
 
 // rotas do admin
-Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'admin'], function () {
     Route::get('produtos', 'Admin\ProdutoController@index')->name('admin.produtos');
     Route::get('produtos/adicionar', 'Admin\ProdutoController@adicionar')->name('admin.produtos.adicionar');
     Route::post('produtos/salvar', 'Admin\ProdutoController@salvar')->name('admin.produtos.salvar');
